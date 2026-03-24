@@ -1,85 +1,154 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zion Tecnologia e Sistemas | Inovação Digital CORPORATIVA</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Zion Tecnologia e Sistemas | Painel de Soluções</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
-        body { font-family: 'DM Sans', sans-serif; background-color: #050505; color: #ffffff; }
-        .font-syne { font-family: 'Syne', sans-serif; }
-        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .text-gradient { background: linear-gradient(135deg, #3b82f6, #60a5fa, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .bg-matrix { background-image: radial-gradient(#1e293b 1px, transparent 1px); background-size: 20px 20px; }
-        
-        /* Ajuste para garantir que a logo branca fique visível no fundo escuro */
-        .brand-logo { filter: brightness(0) invert(1); max-height: 40px; }
+        :root {
+            --bg: #05070a;
+            --surface: #0f121a;
+            --border: #1e2533;
+            --accent: #3b82f6; /* Azul Zion */
+            --text-main: #ffffff;
+            --text-secondary: #94a3b8;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg);
+            background-image: radial-gradient(circle at 2px 2px, #1e2533 1px, transparent 0);
+            background-size: 40px 40px;
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .dashboard {
+            width: 100%;
+            max-width: 1000px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .header-card {
+            grid-column: span 3;
+            background: var(--surface);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 15px;
+        }
+
+        .brand-logo {
+            height: 70px;
+            filter: brightness(0) invert(1); /* Deixa a logo zionclear branca */
+            margin-bottom: 10px;
+        }
+
+        .status-badge {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent);
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .card {
+            background: var(--surface);
+            padding: 30px;
+            border-radius: 24px;
+            border: 1px solid var(--border);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .card:hover {
+            border-color: var(--accent);
+            transform: translateY(-8px);
+            background: rgba(59, 130, 246, 0.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(59, 130, 246, 0.1);
+        }
+
+        .card i {
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .card h3 { font-size: 1.1rem; margin-bottom: 10px; font-weight: 800; }
+        .card p { color: var(--text-secondary); font-size: 0.85rem; line-height: 1.5; }
+
+        .footer {
+            grid-column: span 3;
+            text-align: center;
+            padding: 20px;
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .dashboard { grid-template-columns: 1fr; }
+            .header-card { grid-column: span 1; }
+            .footer { grid-column: span 1; }
+        }
     </style>
 </head>
-<body class="bg-matrix">
+<body>
 
-    <nav class="p-6 flex justify-between items-center max-w-7xl mx-auto">
-        <div class="flex items-center gap-3">
-            <img src="zionblk.png" alt="Zion Tecnologia" class="brand-logo">
-            <div class="text-2xl font-syne font-extrabold tracking-tighter hidden md:block">
-                ZION<span class="text-blue-500">TEC</span>
-            </div>
+    <div class="dashboard">
+        <div class="header-card">
+            <img src="zionclear.png" class="brand-logo" alt="Zion Tecnologia">
+            <span class="status-badge">Soluções Corporativas</span>
+            <p style="color: var(--text-secondary); max-width: 600px; font-size: 0.95rem;">
+                Engenharia de software e automação para empresas que buscam alta performance e controle total de processos.
+            </p>
         </div>
-        <div class="space-x-8 text-sm font-medium text-gray-400 flex items-center">
-            <a href="#solucoes" class="hover:text-white transition">Soluções</a>
-            <a href="https://ziontecsys.github.io/matrix_erp/login.html" class="px-5 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-500 transition shadow-lg shadow-blue-500/20">Acessar Matrix ERP</a>
-        </div>
-    </nav>
 
-    <section class="py-24 px-6 text-center max-w-4xl mx-auto fade-in">
-        <h1 class="text-5xl md:text-7xl font-syne font-extrabold mb-6 leading-tight">
-            Soluções Tecnológicas de <span class="text-gradient">Alta Performance.</span>
-        </h1>
-        <p class="text-gray-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto">
-            A Zion oferece consultoria especializada em desenvolvimento de software corporativo, automação e sistemas ERP integrados para otimizar os seus processos.
-        </p>
-        <div class="flex flex-col md:flex-row gap-5 justify-center items-center">
-            <a href="https://ziontecsys.github.io/matrix_erp/login.html" class="w-full md:w-auto px-10 py-4 bg-white text-black font-bold text-lg rounded-xl hover:bg-gray-200 transition">
-                🚀 Matrix ERP Zion
-            </a>
-            <a href="#contato" class="w-full md:w-auto px-10 py-4 glass font-bold text-lg rounded-xl hover:bg-white/10 transition">
-                Falar com Consultor
-            </a>
-        </div>
-    </section>
+        <a href="https://ziontecsys.github.io/matrix_erp/login.html" class="card" style="border-color: rgba(59, 130, 246, 0.4);">
+            <i class="fas fa-rocket"></i>
+            <h3>Matrix ERP Zion</h3>
+            <p>Acesse o sistema de gestão integrado para controle de produção e financeiro.</p>
+        </a>
 
-    <section id="solucoes" class="py-20 max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
-        <div class="p-8 glass rounded-3xl">
-            <div class="text-3xl mb-4">📱</div>
-            <h3 class="font-syne text-xl mb-2 text-white">Customização Android</h3>
-            <p class="text-gray-400 text-sm leading-relaxed">Desenvolvimento de MODs e sistemas móveis de alta performance para cenários corporativos.</p>
-        </div>
-        <div class="p-8 glass rounded-3xl border-blue-500/30">
-            <div class="text-3xl mb-4">🏢</div>
-            <h3 class="font-syne text-xl mb-2 text-blue-400">Gestão ERP</h3>
-            <p class="text-gray-400 text-sm leading-relaxed">Controle total de estoque, vendas, produção e financeiro com interface segura e intuitiva.</p>
-        </div>
-        <div class="p-8 glass rounded-3xl">
-            <div class="text-3xl mb-4">⚡</div>
-            <h3 class="font-syne text-xl mb-2 text-white">Automação & Consultoria</h3>
-            <p class="text-gray-400 text-sm leading-relaxed">Scripts personalizados e análise de arquitetura para acelerar os fluxos de trabalho da sua empresa.</p>
-        </div>
-    </section>
+        <a href="" class="card">
+            <i class="fas fa-microchip"></i>
+            <h3>Automação</h3>
+            <p>Desenvolvimento de ferramentas e scripts personalizados para otimização de fluxos.</p>
+        </a>
 
-    <section id="contato" class="py-16 px-6 max-w-xl mx-auto text-center">
-        <div class="glass p-10 rounded-2xl">
-            <h4 class="font-syne text-2xl font-bold mb-3">Interessado em nossas soluções?</h4>
-            <p class="text-gray-400 mb-6 text-sm">Se a sua empresa precisa de inovação digital ou customização de sistemas, entre em contato para uma análise.</p>
-            <a href="mailto:contato@ziontecsys.com.br" class="text-blue-400 font-bold text-lg hover:text-blue-300">
-                contato@ziontecsys.com.br
-            </a>
-        </div>
-    </section>
+        <a href="mailto:ziontecsys@gmail.com" class="card">
+            <i class="fas fa-envelope-open-text"></i>
+            <h3>Nosso Contato</h3>
+            <p>Fale com nossa equipe técnica através do e-mail oficial: ziontecsys@gmail.com</p>
+        </a>
 
-    <footer class="py-12 border-t border-white/5 text-center text-gray-500 text-sm">
-        <p>&copy; 2026 Zion Tecnologia e Sistemas. Todos os direitos reservados.</p>
-    </footer>
+        <div class="footer">
+            &copy; 2026 ZION TECNOLOGIA E SISTEMAS. TODOS OS DIREITOS RESERVADOS.
+        </div>
+    </div>
 
 </body>
 </html>
